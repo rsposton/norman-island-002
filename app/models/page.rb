@@ -1,2 +1,17 @@
+# == Schema Information
+# Schema version: 20110802231629
+#
+# Table name: pages
+#
+#  id         :integer         not null, primary key
+#  subject_id :integer
+#  name       :string(255)
+#  permalink  :string(255)
+#  position   :integer
+#  visible    :boolean
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 class Page < ActiveRecord::Base
 end
