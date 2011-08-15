@@ -1,0 +1,43 @@
+<%= link_to("<< Back to List", {:action => 'list'}, :class => 'back-link') %>
+
+<% if !flash[:notice].blank? %>
+  <div class="notice">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<div class='section show'>
+  <h2>Show Section</h2>
+
+  <table summary="Section detail view">
+    <tr>
+      <th>Name</th>
+      <td><%= @section.name %></td>
+    </tr>
+    <tr>
+      <th>Postion</th>
+      <td><%= @section.position %></td>
+    </tr>
+    <tr>
+      <th>Visible?</th>
+      <td><%= @section.visible ? 'true' : 'false' %></td>
+    </tr>
+    <tr>
+      <th>Page Name</th>
+      <td><%= @section.page.nil? ? 'Unassigned' : @section.page.name %></td>
+    </tr>
+    <tr>
+      <th>Editors</th>
+      <td><%= editors(@section.id) %></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @section.created_at %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @section.updated_at %></td>
+    </tr>
+  </table>
+
+</div>
